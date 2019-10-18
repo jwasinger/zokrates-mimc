@@ -1,3 +1,5 @@
+// based on https://github.com/HarryR/ethsnarks/blob/master/ethsnarks/mimc/permutation.py
+
 def mimc_cipher(field input, field[64] round_constants, field k) -> (field):
   field num_round_constants = 64
   field a = 0
