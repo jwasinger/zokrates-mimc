@@ -9,16 +9,16 @@ def mimc_cipher(field input, field[64] round_constants, field k) -> (field):
 
   return input + k
 
-def mimc_hash(field[64] input, field[64] round_constants) -> (field):
+def mimc_hash(field[2] input, field[64] round_constants) -> (field):
   field k = 0
 
-  for field i in 0..64 do
+  for field i in 0..2 do
     k = mimc_cipher(input[i], round_constants, k)
   endfor
 
   return k
 
-def main(private field[64] preimage, public field digest) -> (field):
+def main(private field[2] preimage, public field digest) -> (field):
   field[64] round_constants = [
     42,
     43,
